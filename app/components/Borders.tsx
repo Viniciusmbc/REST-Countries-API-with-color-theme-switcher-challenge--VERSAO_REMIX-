@@ -3,22 +3,18 @@ import React from "react";
 import { useLoaderData } from "remix";
 
 export default function Borders({ borders }) {
-  const [border, setBorders] = useState([]);
+  const [border, setBorders] = useState([borders]);
 
-  
-  useEffect(() => {
-    setBorders(borders);
-    const getBorders = async () => {
-      const response = await fetch(
-        `https://restcountries.com/v3/alpha?codes=${borders.join(
-          ","
-        )}&fields=name,flag,population,region,capital,cca3`
-      );
-      const countries = await response.json();
-      return countries;
-    };
-    getBorders();
-  }),[border];
+    useEffect(() => {
+        setBorders([1,2,3]);
+        borders.map(async (border) => {
+            const response = await fetch(
+                `https://restcountries.com/v3.1/alpha/${border}?fields=name,flags,population,region,subregion,capital,languages,tld,currencies,borders` 
+            );
+            const country = await response.json();
+            setBorders(border => [...border, country]);
+        });
+    }, []);
 
   return (
     <div>

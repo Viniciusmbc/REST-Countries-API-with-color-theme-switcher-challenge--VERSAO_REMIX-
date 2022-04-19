@@ -10,3 +10,11 @@ export async function getCountries() {
   return countries;
 }
 
+export async function getCountriesBycca(cca3) {
+  
+  const countries = await fetch(
+    `https://restcountries.com/v3.1/alpha/${cca3.toLowerCase()}?fields=name,flags,population,region,subregion,capital,languages,tld,currencies,borders`
+  );
+  const country = await countries.json();
+  return country;
+}

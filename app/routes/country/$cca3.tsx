@@ -1,6 +1,7 @@
 import { useFetcher, useLoaderData } from "remix";
 import { useState, useEffect } from "react";
 import Borders from "~/components/Borders";
+import { getCountriesBycca } from "~/api/countries";
 
 
 export async function loader({ params }) {
@@ -9,6 +10,7 @@ export async function loader({ params }) {
     `https://restcountries.com/v3.1/alpha/${params.cca3}?fields=name,flags,population,region,subregion,capital,languages,tld,currencies,borders`
   );
   const country = await countries.json();
+ 
   return country;
 }
 
