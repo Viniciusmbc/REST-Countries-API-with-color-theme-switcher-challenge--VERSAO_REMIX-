@@ -3,9 +3,9 @@ import React from "react";
 import { useLoaderData } from "remix";
 
 export default function Borders({ borders }) {
-  const [border, setBorders] = useState([borders]);
+  const [border, setBorders] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setBorders(borders);
     const getBorders = async () => {
       const response = await fetch(
@@ -17,11 +17,11 @@ export default function Borders({ borders }) {
       return countries;
     };
     getBorders();
-  }),[borders];
+  }),[];
 
   return (
     <div>
-      <h2>Borders: {`${borders}`} </h2>
+      <h2>Borders: {`${border}`} </h2>
     </div>
   );
 }
