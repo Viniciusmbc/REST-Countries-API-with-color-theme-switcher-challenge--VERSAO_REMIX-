@@ -5,6 +5,7 @@ import { useLoaderData } from "remix";
 export default function Borders({ borders }) {
   const [border, setBorders] = useState([]);
 
+  
   useEffect(() => {
     setBorders(borders);
     const getBorders = async () => {
@@ -17,7 +18,7 @@ export default function Borders({ borders }) {
       return countries;
     };
     getBorders();
-  }),[];
+  }),[border];
 
   return (
     <div>

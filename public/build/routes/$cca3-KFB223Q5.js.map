@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:C:\\Users\\viniciuscaceres\\Downloads\\node-grqkjw\\app\\routes\\$cca3.tsx?browser", "../../../app/routes/$cca3.tsx"],
+  "sourcesContent": ["export * from \"C:\\\\Users\\\\viniciuscaceres\\\\Downloads\\\\node-grqkjw\\\\app\\\\routes\\\\$cca3.tsx\";", "import { getCountryByCCA3 } from '~/api/countries';\r\nimport { json, useLoaderData } from 'superjson-remix';\r\nimport { LoaderFunction, useParams } from 'remix';\r\n\r\n// Language: typescript\r\n// Path: app\\routes\\$cca3.tsx\r\nexport const useCountryByCCA3 = (): LoaderFunction<Country> => {        \r\n    const { cca3 } = useParams();\r\n    return useLoaderData(getCountryByCCA3(cca3), json);\r\n}      \r\n\r\n// Language: typescript\r\n// Path: app\\routes\\$cca3.tsx\r\nexport const CountryByCCA3 = () => {\r\n    const country = useLoaderData();\r\n    return <div>\r\n        <h1>Country by cca3</h1>\r\n        <p>{country.name}</p>\r\n        <p>{country.cca3}</p>\r\n    </div>\r\n}"],
+  "mappings": ";;;;;;;;;;;;AAAA;;;ACAA;AAMO,IAAM,mBAAmB,MAA+B;AAC3D,QAAM,EAAE,SAAS;AACjB,SAAO,cAAc,iBAAiB,OAAO;AAAA;AAK1C,IAAM,gBAAgB,MAAM;AAC/B,QAAM,UAAU;AAChB,SAAO,oCAAC,OAAD,MACH,oCAAC,MAAD,MAAI,oBACJ,oCAAC,KAAD,MAAI,QAAQ,OACZ,oCAAC,KAAD,MAAI,QAAQ;AAAA;",
+  "names": []
+}

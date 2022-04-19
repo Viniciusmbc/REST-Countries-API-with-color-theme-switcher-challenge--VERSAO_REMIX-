@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:C:\\Users\\viniciuscaceres\\Downloads\\node-grqkjw\\app\\routes\\$cca3.tsx?browser", "../../../app/routes/$cca3.tsx"],
+  "sourcesContent": ["export * from \"C:\\\\Users\\\\viniciuscaceres\\\\Downloads\\\\node-grqkjw\\\\app\\\\routes\\\\$cca3.tsx\";", "import { getCountryByName } from '~/api/countries';\r\nimport { json, useLoaderData } from 'superjson-remix';\r\nimport { LoaderFunction, useParams } from 'remix';\r\n\r\n// Language: typescript\r\n// Path: app\\routes\\$name.tsx\r\nimport { getCountryByName } from '~/api/countries';\r\n\r\n// Language: typescript\r\n// Path: app\\routes\\$cca3.tsx\r\nexport const CountryByCCA3 = () => {\r\n    const country = useLoaderData();\r\n    return <div>\r\n        <h1>Country by cca3</h1>\r\n        <p>{country.name}</p>\r\n        <p>{country.cca3}</p>\r\n    </div>\r\n}"],
+  "mappings": ";;;;;;;;;AAAA;;;ACAA;AAUO,IAAM,gBAAgB,MAAM;AAC/B,QAAM,UAAU;AAChB,SAAO,oCAAC,OAAD,MACH,oCAAC,MAAD,MAAI,oBACJ,oCAAC,KAAD,MAAI,QAAQ,OACZ,oCAAC,KAAD,MAAI,QAAQ;AAAA;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:C:\\Users\\viniciuscaceres\\Downloads\\node-grqkjw\\app\\routes\\$cca3.tsx?browser", "../../../app/routes/$cca3.tsx"],
+  "sourcesContent": ["export { default } from \"C:\\\\Users\\\\viniciuscaceres\\\\Downloads\\\\node-grqkjw\\\\app\\\\routes\\\\$cca3.tsx\";", "import { getCountryByCCA3 } from '~/api/countries';\r\nimport { json, useLoaderData } from 'superjson-remix';\r\nimport { LoaderFunction, useParams } from 'remix';\r\n\r\nexport const loader: LoaderFunction = async ({params}) =>{\r\n  const country = await getCountryByCCA3(params.name);\r\n  console.log(country[0])\r\n  return country\r\n}\r\n\r\n\r\nexport default function CountryDetails() {\r\n  const params = useParams();\r\n return <h1>{params}</h1>\r\n}"],
+  "mappings": ";;;;;;;AAAA;;;ACAA;AAWe,0BAA0B;AACvC,QAAM,SAAS;AAChB,SAAO,oCAAC,MAAD,MAAK;AAAA;",
+  "names": []
+}

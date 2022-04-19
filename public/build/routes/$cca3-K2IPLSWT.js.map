@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:C:\\Users\\viniciuscaceres\\Downloads\\node-grqkjw\\app\\routes\\$cca3.tsx?browser", "../../../app/routes/$cca3.tsx"],
+  "sourcesContent": ["export * from \"C:\\\\Users\\\\viniciuscaceres\\\\Downloads\\\\node-grqkjw\\\\app\\\\routes\\\\$cca3.tsx\";", "import { getCountryByName } from '~/api/countries';\r\nimport { json, useLoaderData } from 'superjson-remix';\r\nimport { LoaderFunction, useParams } from 'remix';\r\n\r\n// Language: typescript\r\n// Path: app\\routes\\$name.tsx\r\nexport function useCountryByName() {\r\n  const { name } = useParams();\r\n  const loader: LoaderFunction<any> = async () => {\r\n    const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);\r\n\r\n    const country = await response.json();\r\n\r\n    return country[0];\r\n  };\r\n\r\n  return useLoaderData(loader);\r\n}\r\n\r\n// Language: typescript\r\n// Path: app\\routes\\$cca3.tsx\r\nexport const CountryByCCA3 = () => {\r\n    const country = useLoaderData();\r\n    return <div>\r\n        <h1>Country by cca3</h1>\r\n        <p>{country.name}</p>\r\n        <p>{country.cca3}</p>\r\n    </div>\r\n}"],
+  "mappings": ";;;;;;;;;;AAAA;;;ACAA;AAMO,4BAA4B;AACjC,QAAM,EAAE,SAAS;AACjB,QAAM,SAA8B,YAAY;AAC9C,UAAM,WAAW,MAAM,MAAM,uCAAuC;AAEpE,UAAM,UAAU,MAAM,SAAS;AAE/B,WAAO,QAAQ;AAAA;AAGjB,SAAO,cAAc;AAAA;AAKhB,IAAM,gBAAgB,MAAM;AAC/B,QAAM,UAAU;AAChB,SAAO,oCAAC,OAAD,MACH,oCAAC,MAAD,MAAI,oBACJ,oCAAC,KAAD,MAAI,QAAQ,OACZ,oCAAC,KAAD,MAAI,QAAQ;AAAA;",
+  "names": []
+}

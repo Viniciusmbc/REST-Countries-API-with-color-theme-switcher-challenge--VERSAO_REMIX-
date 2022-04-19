@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:C:\\Users\\viniciuscaceres\\Downloads\\node-grqkjw\\app\\routes\\country\\$cca3.tsx?browser", "../../../../app/routes/country/$cca3.tsx"],
+  "sourcesContent": ["export * from \"C:\\\\Users\\\\viniciuscaceres\\\\Downloads\\\\node-grqkjw\\\\app\\\\routes\\\\country\\\\$cca3.tsx\";", "import { getCountries } from \"~/api/countries\";\r\nimport { json } from \"superjson-remix\";\r\n// Patch the country route\r\n// Language: typescript\r\n// Path: app\\routes\\country\\index.tsx\r\n// Compare this snippet from app\\routes\\country\\index.tsx:\r\nexport async function loader({ params }) {\r\n  params.cca3 = params.cca3.toLowerCase();\r\n  const countries = await fetch(`https://restcountries.com/v3/alpha/${params.cca3}?fields=name,population,region,capital`);\r\n  const country = json(await countries.json());\r\n  return country;\r\n}\r\n\r\n\r\n\r\n\r\n"],
+  "mappings": ";;;;;;;;AAAA;;;ACAA;AAMA,sBAA6B,EAAE,UAAU;AACvC,SAAO,OAAO,OAAO,KAAK;AAC1B,QAAM,YAAY,MAAM,MAAM,sCAAsC,OAAO;AAC3E,QAAM,UAAU,KAAK,MAAM,UAAU;AACrC,SAAO;AAAA;",
+  "names": []
+}

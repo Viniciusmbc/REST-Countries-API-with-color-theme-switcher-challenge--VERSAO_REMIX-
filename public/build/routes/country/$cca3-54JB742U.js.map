@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:C:\\Users\\viniciuscaceres\\Downloads\\node-grqkjw\\app\\routes\\country\\$cca3.tsx?browser", "../../../../app/routes/country/$cca3.tsx"],
+  "sourcesContent": ["export * from \"C:\\\\Users\\\\viniciuscaceres\\\\Downloads\\\\node-grqkjw\\\\app\\\\routes\\\\country\\\\$cca3.tsx\";", "import { getCountries } from \"~/api/countries\";\r\n// Patch the country route\r\n// Language: typescript\r\n// Path: app\\routes\\country\\index.tsx\r\n// Compare this snippet from app\\routes\\country\\index.tsx:\r\nexport async function loader() {\r\n  return getCountries();\r\n}\r\n\r\n\r\n"],
+  "mappings": ";;;;;;;;AAAA;;;ACAA;AAKA,wBAA+B;AAC7B,SAAO;AAAA;",
+  "names": []
+}
