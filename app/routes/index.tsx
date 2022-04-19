@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { json, useLoaderData } from "superjson-remix";
+import { useLoaderData } from "superjson-remix";
 import { useState } from "react";
 import { getCountries } from "~/api/countries";
 
@@ -38,22 +38,27 @@ export default function Index() {
               return countries;
             }
           })
-          .map(({ flags, name, population, region, capital }) => (
+          .map(({ flags, name, population, region, capital, cca3 }) => (
             <div key={name.common} className="bg-white shadow-md shadow-white">
+         
               <img
                 className="h-32 w-full"
                 src={flags.png}
                 alt={`bandeira de ${name.common}`}
               />
+              <Link to={`/country/${cca3.toLowerCase()}`}>
               <h2 className="my-4">
                 <b>{name.common} </b>{" "}
               </h2>
+                 </Link>
+             
               <p>
                 <b>Population:</b> {population}
               </p>
               <p>
                 <b>Region:</b> {region}
               </p>
+          
               <p>
                 <b>Capital:</b> {capital}
               </p>

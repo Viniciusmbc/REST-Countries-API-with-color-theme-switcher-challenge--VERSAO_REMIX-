@@ -1,28 +1,28 @@
+import { useFetcher, useLoaderData } from "remix";
+import { useState, useEffect } from "react";
+import Borders from "~/components/Borders";
 
-import { useLoaderData } from "remix";
 
-// Patch the country route
-// Language: typescript
-// Path: app\routes\country\index.tsx
-// Compare this snippet from app\routes\country\index.tsx:
 export async function loader({ params }) {
   params.cca3 = params.cca3.toLowerCase();
   const countries = await fetch(
-    `https://restcountries.com/v3.1/alpha/${params.cca3}?fields=name,flags,population,region,subregion,capital,languages,tld,currencies`
+    `https://restcountries.com/v3.1/alpha/${params.cca3}?fields=name,flags,population,region,subregion,capital,languages,tld,currencies,borders`
   );
   const country = await countries.json();
   return country;
 }
 
-export default function CountryDetails() {
-  const country = useLoaderData();
 
+export default function CountryDetails() {
+
+  const country = useLoaderData();
   return (
     <div>
-     <img
+      <img
         src={country.flags.png}
         alt={`bandeira de ${country.name.common}`}
-      ></img>
+      />
+  
       <div>
         <h2> {country.name.common}</h2>
         <ul>
@@ -44,9 +44,9 @@ export default function CountryDetails() {
             Languages:
             {Object.values(country.languages).join(", ")}
           </li>
-          <li>Border Countries: </li>
+          <li><Borders borders={country.borders}/>  </li>
         </ul>
       </div>
-          </div>
+    </div>
   );
 }
