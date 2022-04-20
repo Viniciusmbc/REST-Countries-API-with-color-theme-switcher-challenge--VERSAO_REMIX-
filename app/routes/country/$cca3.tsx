@@ -1,6 +1,5 @@
 import { useFetcher, useLoaderData } from "remix";
 import { useState, useEffect } from "react";
-import Borders from "~/components/Borders";
 import { getCountriesBycca } from "~/api/countries";
 
 
@@ -10,21 +9,25 @@ export async function loader({ params }) {
     `https://restcountries.com/v3.1/alpha/${params.cca3}?fields=name,flags,population,region,subregion,capital,languages,tld,currencies,borders`
   );
   const country = await countries.json();
- 
-  return country;
+  
+  const res = await fetch(`https://restcountries.com/v3.1/alpha?codes=${country.borders}`);
+
+  const borders = await res.json();
+  return {country, borders};
 }
 
 
 export default function CountryDetails() {
 
-  const country = useLoaderData();
+  const {country, borders} = useLoaderData();
   return (
     <div>
+      
       <img
         src={country.flags.png}
         alt={`bandeira de ${country.name.common}`}
       />
-  
+     
       <div>
         <h2> {country.name.common}</h2>
         <ul>
@@ -46,7 +49,11 @@ export default function CountryDetails() {
             Languages:
             {Object.values(country.languages).join(", ")}
           </li>
-          <li><Borders borders={country.borders}/>  </li>
+          <li>
+          {country.borders.length > 0  ? 
+          <div>Borders: {borders.map(({name}) => <p>
+            {name.common} </p>)}
+          </div>  : null }  </li>
         </ul>
       </div>
     </div>

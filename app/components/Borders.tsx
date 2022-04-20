@@ -3,7 +3,7 @@ import React from "react";
 import { useLoaderData } from "remix";
 
 export default function Borders({ borders }) {
-  const [border, setBorders] = useState([borders]);
+  const [border, setBorders] = useState(borders);
 
     useEffect(() => {
         setBorders([1,2,3]);
@@ -18,7 +18,7 @@ export default function Borders({ borders }) {
 
   return (
     <div>
-      <h2>Borders: {`${border}`} </h2>
+      <h2>Borders: {`${border.join(",")}`} </h2>
     </div>
   );
 }
