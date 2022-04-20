@@ -2,6 +2,7 @@ import { Link } from "@remix-run/react";
 import { useLoaderData } from "superjson-remix";
 import { useState } from "react";
 import { getCountries } from "~/api/countries";
+import Cards from "~/components/Cards";
 
 export async function loader() {
   return getCountries();
@@ -13,21 +14,21 @@ export default function Index() {
   const [query, setQuery] = useState("");
 
   return (
-    <section className="container mx-auto max-w-screen-lg">
+    <section className='container mx-auto max-w-screen-lg'>
       <section className="flex">
-        <div className="mt-11">
+        <div>
           <input
-            className="h-10"
             placeholder="Search for a country..."
             onChange={(event) => setQuery(event.target.value)}
           />
         </div>
-        <div className="ml-auto mt-11">
-          <input className="h-10" placeholder="Filter by region" />
+        <div className="ml-auto">
+          <input placeholder="Filter by region" />
         </div>
       </section>
 
-      <div className="grid grid-cols-4 gap-y-12 gap-x-16 mt-11">
+
+        <article className="grid grid-cols-4 gap-x-14 gap-y-24">
         {countries
           .filter(({ name }) => {
             if (name === "") {
@@ -39,10 +40,9 @@ export default function Index() {
             }
           })
           .map(({ flags, name, population, region, capital, cca3 }) => (
-            <div key={name.common} className="bg-white shadow-md shadow-white">
-         
+            <div key={name.common} className="w-full">
               <img
-                className="h-32 w-full"
+                className="h-36 w-full"
                 src={flags.png}
                 alt={`bandeira de ${name.common}`}
               />
@@ -65,7 +65,10 @@ export default function Index() {
             </div>
           ))
           .splice(0, 8)}
-      </div>
+  
+      </article>
+
+      
     </section>
   );
 }

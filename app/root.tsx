@@ -50,7 +50,7 @@ function Layout({ children }) {
     <>
       <nav className='container flex mx-auto max-w-screen-lg'>
         <h2> Where in the World? </h2>
-        <button className='ml-auto'>
+        <button className='ml-auto flex'>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -68,7 +68,7 @@ function Layout({ children }) {
           Dark Mode
         </button>
       </nav>
-      <div className='bg-slate-500'>{children}</div>
+      <div>{children}</div>
     </>
   );
 }
