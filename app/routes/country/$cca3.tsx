@@ -16,7 +16,6 @@ export async function loader({ params }) {
   return {country, borders};
 }
 
-
 export default function CountryDetails() {
 
   const {country, borders} = useLoaderData();
