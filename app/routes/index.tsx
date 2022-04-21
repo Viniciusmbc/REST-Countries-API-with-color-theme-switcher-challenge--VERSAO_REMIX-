@@ -2,7 +2,6 @@ import { Link } from "@remix-run/react";
 import { useLoaderData } from "superjson-remix";
 import { useState } from "react";
 import { getCountries } from "~/api/countries";
-import Cards from "~/components/Cards";
 
 export async function loader() {
   return getCountries();
@@ -14,8 +13,8 @@ export default function Index() {
   const [query, setQuery] = useState("");
 
   return (
-    <section className='container mx-auto max-w-screen-lg'>
-      <section className="flex">
+    <section className="container mx-auto max-w-screen-lg">
+      <article className="flex my-10">
         <div>
           <input
             placeholder="Search for a country..."
@@ -25,10 +24,9 @@ export default function Index() {
         <div className="ml-auto">
           <input placeholder="Filter by region" />
         </div>
-      </section>
+      </article>
 
-
-        <article className="grid grid-cols-4 gap-x-14 gap-y-24">
+      <article className="grid grid-cols-4 gap-x-14 gap-y-24">
         {countries
           .filter(({ name }) => {
             if (name === "") {
@@ -47,28 +45,25 @@ export default function Index() {
                 alt={`bandeira de ${name.common}`}
               />
               <Link to={`/country/${cca3.toLowerCase()}`}>
-              <h2 className="my-4">
-                <b>{name.common} </b>{" "}
-              </h2>
-                 </Link>
-             
+                <h2 className="my-4">
+                  <b>{name.common} </b>{" "}
+                </h2>
+              </Link>
+
               <p>
-                <b>Population:</b> {population}
+                <b>Population: </b> {population}
               </p>
               <p>
-                <b>Region:</b> {region}
+                <b>Region: </b> {region}
               </p>
-          
+
               <p>
-                <b>Capital:</b> {capital}
+                <b>Capital: </b> {capital}
               </p>
             </div>
           ))
           .splice(0, 8)}
-  
       </article>
-
-      
     </section>
   );
 }
