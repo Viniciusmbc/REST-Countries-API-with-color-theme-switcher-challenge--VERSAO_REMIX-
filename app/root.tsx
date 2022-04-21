@@ -5,8 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from 'remix';
-import type { MetaFunction } from 'remix';
+} from "remix";
+import type { MetaFunction } from "remix";
 import { LinksFunction } from "remix";
 import styles from "./tailwind.css";
 
@@ -15,7 +15,7 @@ export let links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-  return { title: 'New Remix App' };
+  return { title: "New Remix App" };
 };
 
 export default function App() {
@@ -39,7 +39,7 @@ function Document({ children }) {
       </head>
       <body>
         {children}
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
+        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );
@@ -48,9 +48,9 @@ function Document({ children }) {
 function Layout({ children }) {
   return (
     <>
-      <nav className='container flex mx-auto max-w-screen-lg'>
+      <nav className="container flex mx-auto max-w-screen-lg">
         <h2> Where in the World? </h2>
-        <button className='ml-auto flex'>
+        <button className="ml-auto flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

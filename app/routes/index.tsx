@@ -37,29 +37,25 @@ export default function Index() {
               return countries;
             }
           })
-          .map(({ flags, name, population, region, capital, cca3 }) => (
-            <div key={name.common} className="w-full">
-              <img
-                className="h-36 w-full"
-                src={flags.png}
-                alt={`bandeira de ${name.common}`}
-              />
-              <Link to={`/country/${cca3.toLowerCase()}`}>
-                <h2 className="my-4">
-                  <b>{name.common} </b>{" "}
+          .map(({ flags, name, population, region, capital }) => (
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <figure>
+                <img src={flags.png} alt={`bandeira de ${name.common}`} />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">
+                  <b>{name.common}</b>
                 </h2>
-              </Link>
-
-              <p>
-                <b>Population: </b> {population}
-              </p>
-              <p>
-                <b>Region: </b> {region}
-              </p>
-
-              <p>
-                <b>Capital: </b> {capital}
-              </p>
+                <p>
+                  <b>Population: </b> {population}
+                </p>
+                <p>
+                  <b>Region: </b> {region}
+                </p>
+                <p>
+                  <b>Capital: </b> {capital}
+                </p>
+              </div>
             </div>
           ))
           .splice(0, 8)}
