@@ -1,0 +1,197 @@
+.container {
+  max-width: 1444px;
+  margin: 0 auto;
+}
+
+.inputs_search_filter {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.input_search {
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+
+.input_search_icon {
+  width: 2rem;
+  height: 57px;
+  padding: 0 2rem 0 2rem;
+  border: none;
+  border-radius: 0.25rem 0 0 0.25rem;
+  background-color: rgb(255, 255, 255);
+  color: rgb(108, 108, 109);
+}
+
+.input_search_input {
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  color: rgb(108, 108, 109);
+}
+
+::placeholder {
+  font-size: 1rem;
+  color: rgb(108, 108, 109);
+}
+
+.filter_region_input {
+  width: 10rem;
+  margin-left: auto;
+}
+
+/* Dropdown styles */
+.name_button_dropdown {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  background-color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.name_button_dropdown span {
+  font-size: 1rem;
+  padding-right: 40px;
+  color: rgb(72, 72, 72);
+}
+
+a.button {
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+a.button:active {
+  filter: brightness(55%);
+}
+
+.button_arrow_down {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdown {
+  position: relative;
+  margin-left: auto;
+  border: none;
+}
+
+.dropdown summary {
+  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
+  list-style: none;
+  list-style-type: none;
+}
+
+.dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown summary:focus a.button {
+  border: 2px solid white;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown ul {
+  position: absolute;
+  margin: 20px 0 0 0;
+  padding: 10px 0;
+  top: 40px;
+  background: rgb(255, 255, 255);
+  width: 100%;
+  box-sizing: content-box;
+  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
+  z-index: 2;
+  border-radius: 6px;
+  list-style: none;
+}
+
+.dropdown ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li a:link,
+.dropdown ul li a:visited {
+  display: inline-block;
+  padding: 10px 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.dropdown ul li :last-child:hover {
+  background-color: var(--dropdown-highlight);
+  color: var(--dropdown-background);
+}
+
+/* Close the dropdown with outside clicks */
+
+.dropdown > summary::before {
+  display: none;
+}
+
+.dropdown[open] > summary::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Card grid */
+.card_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 10%;
+  row-gap: 7%;
+  margin-top: 2.5rem;
+}
+
+.cards {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card_flags {
+  width: 100%;
+  height: 135px;
+}
+
+.card_body {
+  font-size: 14px;
+  margin: 2rem 1rem;
+}
+
+.card_body a {
+  text-decoration: none;
+  color: #000;
+}
+
+.card_body p {
+  margin-top: 1rem;
+}

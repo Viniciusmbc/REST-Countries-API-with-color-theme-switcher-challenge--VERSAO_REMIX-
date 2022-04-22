@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main_layout {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.navbar {
+  width: 100%;
+  background-color: #949408;
+  border-bottom: solid 6px #f8f8f845;
+}
+
+.navbar_itens {
+  display: flex;
+  max-width: 1444px;
+  padding: 1% 0 1% 0;
+  margin: 0 auto;
+}
+
+.navbar h2 {
+  font-size: 1.5rem;
+}
+
+.dark_mode_button {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  background: #949408;
+  border: solid #fffffe 1px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dark_mode_button p {
+  font-size: 1.2rem;
+}
+
+.moon_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
