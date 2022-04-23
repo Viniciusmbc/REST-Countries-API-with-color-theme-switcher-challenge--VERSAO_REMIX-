@@ -1,0 +1,87 @@
+.country_details_main {
+  max-width: 1444px;
+  margin: 0 auto;
+}
+
+.back_button {
+  width: 9rem;
+  display: flex;
+  margin: 4rem 0;
+  align-items: center;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
+}
+
+.back_button a {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+.back_button_arrow {
+  width: 1.5rem;
+  height: 100%;
+  margin: 1rem;
+}
+
+figure {
+  width: 35%;
+  margin: 0;
+  padding: 0;
+}
+
+.country_details {
+  display: flex;
+  flex-direction: column;
+}
+
+.country_details_card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country_details_flag {
+  width: 100%;
+  height: 90%;
+}
+
+.country_details_card_body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 10rem;
+}
+
+.country_details_card_body h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.country_details_card_text {
+  display: flex;
+}
+
+.country_details_card_text > div {
+  margin-right: 5rem;
+}
+
+.country_details_card_text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.country_details_card_text li {
+  margin: 1.5rem 0;
+}
+
+.borders_countries {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.borders_countries p {
+  padding: 0.5rem 1rem;
+  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
+}
