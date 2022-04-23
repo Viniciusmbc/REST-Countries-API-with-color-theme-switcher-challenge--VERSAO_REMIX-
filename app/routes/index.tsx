@@ -2,7 +2,7 @@ import { Link } from "@remix-run/react";
 import { useLoaderData } from "superjson-remix";
 import { useState } from "react";
 import { getCountries } from "~/api/countries";
-import { IoSearchSharp, IoChevronDown } from "react-icons/io5";
+import { IoSearchSharp } from "react-icons/io5";
 
 import styles from "~/styles/index.css";
 
@@ -32,31 +32,31 @@ export default function Index() {
           />
         </div>
 
-        <details className="dropdown">
-          <summary role="button" className="name_button_dropdown">
-            <span>Filter by Region</span>
-            <a className="button">
-              <IoChevronDown className="button_arrow_down" />{" "}
-            </a>
-          </summary>
-          <ul>
+        <div className="input_filter_region">
+          <ul id="menu">
             <li>
-              <Link to={`/countries/Africa`}>Africa</Link>{" "}
-            </li>
-            <li>
-              <Link to={`/countries/Americas`}>Americas</Link>
-            </li>
-            <li>
-              <Link to={`/countries/Asia`}>Asia</Link>
-            </li>
-            <li>
-              <Link to={`/countries/Europe`}>Europe</Link>
-            </li>
-            <li>
-              <Link to={`/countries/Oceania`}>Oceania</Link>
+              <input id="check01" type="checkbox" name="menu" />
+              <label htmlFor="check01">Filter by Region</label>
+              <ul className="submenu">
+                <li>
+                  <Link to={`/countries/africa`}>Africa</Link>
+                </li>
+                <li>
+                  <Link to={`/countries/america`}>America</Link>
+                </li>
+                <li>
+                  <Link to={`/countries/asia`}>Asia</Link>
+                </li>
+                <li>
+                  <Link to={`/countries/europe`}>Europe</Link>
+                </li>
+                <li>
+                  <Link to={`/countries/oceania`}>Oceania</Link>
+                </li>
+              </ul>
             </li>
           </ul>
-        </details>
+        </div>
       </article>
 
       <article className="card_grid">

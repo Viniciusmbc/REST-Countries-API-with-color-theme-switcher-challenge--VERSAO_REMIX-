@@ -5,15 +5,15 @@
 
 .inputs_search_filter {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding-top: 2rem;
+  padding: 1.5rem 0;
   margin-bottom: 1rem;
 }
 
 .input_search {
   border-radius: 0.25rem;
   box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
-  width: 30%;
   display: flex;
   align-items: center;
 }
@@ -21,7 +21,7 @@
 .input_search_icon {
   width: 2rem;
   height: 57px;
-  padding: 0 2rem 0 2rem;
+  padding: 0 1rem 0 1rem;
   border: none;
   border-radius: 0.25rem 0 0 0.25rem;
   background-color: rgb(255, 255, 255);
@@ -44,120 +44,108 @@
   color: rgb(108, 108, 109);
 }
 
-.filter_region_input {
-  width: 10rem;
+.input_filter_region {
   margin-left: auto;
 }
 
-/* Dropdown styles */
-.name_button_dropdown {
-  display: flex;
-  align-items: center;
-  height: 2.5rem;
-  border: none;
-  border-radius: 0 0.25rem 0.25rem 0;
-  background-color: rgb(255, 255, 255);
-  padding: 0.5rem;
-  font-size: 0.875rem;
+@media screen and (max-width: 470px) {
+  .input_filter_region {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
 }
 
-.name_button_dropdown span {
-  font-size: 1rem;
-  padding-right: 40px;
-  color: rgb(72, 72, 72);
+/* dropdown menu */
+/*Style for the first level menu bar*/
+
+.input_filter_region ul#menu {
+  height: 3em;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding-left: 0;
+  padding-top: 10px;
+  width: 180px;
+  border-radius: 0.25rem;
+  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
+  background: rgb(255, 255, 255);
+  color: rgb(75, 75, 76);
 }
 
-a.button {
-  border: none;
-  font-size: 24px;
+.input_filter_region ul#menu > li {
+  float: left;
+  list-style-type: none;
+  position: relative;
+}
+
+.input_filter_region label {
+  position: relative;
+  display: block;
+  padding: 0 18px 0 12px;
+  line-height: 3em;
+  transition: background 0.3s;
   cursor: pointer;
 }
 
-a.button:active {
-  filter: brightness(55%);
-}
-
-.button_arrow_down {
-  width: 20px;
-  height: 20px;
-}
-
-.dropdown {
-  position: relative;
-  margin-left: auto;
-  border: none;
-}
-
-.dropdown summary {
-  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
-  list-style: none;
-  list-style-type: none;
-}
-
-.dropdown > summary::-webkit-details-marker {
-  display: none;
-}
-
-.dropdown summary:focus {
-  outline: none;
-}
-
-.dropdown summary:focus a.button {
-  border: 2px solid white;
-}
-
-.dropdown summary:focus {
-  outline: none;
-}
-
-.dropdown ul {
+.input_filter_region label:after {
+  content: "";
   position: absolute;
-  margin: 20px 0 0 0;
-  padding: 10px 0;
-  top: 40px;
-  background: rgb(255, 255, 255);
-  width: 100%;
-  box-sizing: content-box;
-  box-shadow: 2px 2px 2px 2px rgb(213, 211, 211);
-  z-index: 2;
-  border-radius: 6px;
-  list-style: none;
+  display: block;
+  top: 22px;
+  left: 160px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 0 solid rgba(3, 3, 3, 0.5);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  transition: border-bottom 0.1s, border-top 0.1s 0.1s;
 }
 
-.dropdown ul li {
-  padding: 0;
-  margin: 0;
+.input_filter_region input:checked ~ label:after {
+  border-top: 0 solid rgba(14, 1, 1, 0.5);
+  border-bottom: 4px solid rgba(19, 3, 3, 0.5);
+  transition: border-top 0.1s, border-bottom 0.1s 0.1s;
 }
 
-.dropdown ul li a:link,
-.dropdown ul li a:visited {
-  display: inline-block;
-  padding: 10px 0.8rem;
-  width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
-.dropdown ul li :last-child:hover {
-  background-color: var(--dropdown-highlight);
-  color: var(--dropdown-background);
-}
-
-/* Close the dropdown with outside clicks */
-
-.dropdown > summary::before {
+/*hide the inputs*/
+.input_filter_region input {
   display: none;
 }
 
-.dropdown[open] > summary::before {
-  content: " ";
+/*show the second levele menu of the selected voice*/
+.input_filter_region input:checked ~ ul.submenu {
+  max-height: 300px;
+  transition: max-height 0.5s ease-in;
+}
+
+/*style for the second level menu*/
+ul.submenu {
+  width: 180px;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 2px 2px rgb(213, 211, 211);
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  background: rgb(255, 255, 255);
+  transition: max-height 0.5s ease-out;
+  position: absolute;
+  min-width: 100%;
+}
+
+.input_filter_region ul.submenu li a {
   display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
+  padding: 12px;
+  color: rgb(77, 11, 11);
+  text-decoration: none;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.input_filter_region ul.submenu li a:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Card grid */
@@ -166,11 +154,18 @@ a.button:active {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   column-gap: 10%;
   row-gap: 7%;
-  margin-top: 2.5rem;
+}
+
+@media screen and (max-width: 470px) {
+  .card_grid {
+    width: 70%;
+    margin: 0 auto;
+    row-gap: 2%;
+  }
 }
 
 .cards {
-  width: 100%;
+  display: block;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
