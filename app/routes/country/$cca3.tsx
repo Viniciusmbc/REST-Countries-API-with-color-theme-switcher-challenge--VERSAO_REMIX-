@@ -92,10 +92,12 @@ export default function CountryDetails() {
           </div>
           {country.borders.length > 0 ? (
             <article className="borders_countries">
-              <b>Border Countries: </b>
+              <p> <b>Borders Countries:</b> </p>
+              <div >
               {borders.map(({ name }) => (
-                <p> {name.common} </p>
-              ))}
+<p className="border_countries_name"> {name.common} </p>
+))}
+              </div>
             </article>
           ) : null}
         </div>

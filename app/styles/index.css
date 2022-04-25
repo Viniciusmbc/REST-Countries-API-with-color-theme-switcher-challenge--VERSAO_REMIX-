@@ -33,15 +33,11 @@
   width: 100%;
   border: none;
   border-radius: 0 0.25rem 0.25rem 0;
-  background-color: rgb(255, 255, 255);
   padding: 0.5rem;
-  font-size: 0.875rem;
-  color: rgb(108, 108, 109);
 }
 
 ::placeholder {
-  font-size: 1.2rem;
-  color: rgb(75, 75, 76);
+  font-size: 1rem;
 }
 
 .input_filter_region {
@@ -150,9 +146,9 @@ ul.submenu {
 /* Card grid */
 .card_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 250px));
   column-gap: 10%;
-  row-gap: 7%;
+  row-gap: 5%;
 }
 
 @media screen and (max-width: 470px) {
@@ -168,12 +164,12 @@ ul.submenu {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
 }
 
 .card_flags {
   width: 100%;
-  height: 135px;
+  height: 10rem;
+  border-radius: 10px 10px 0 0;
 }
 
 .card_body {
